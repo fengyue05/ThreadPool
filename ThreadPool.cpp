@@ -3,7 +3,7 @@
 #include <mutex>
 #include <thread>
 
-#define MAX_SIZE 1024
+#define MAX_SIZE 6
 
 ThreadPool::ThreadPool()
     : taskQueMaxThreadHold_(0)
@@ -16,6 +16,7 @@ ThreadPool::~ThreadPool() {}
 
 void ThreadPool::start(int size) {
     initThreadSize_ = size;
+    setTaskQueMaxSize(MAX_SIZE);
 
     for (int i = 0; i < initThreadSize_; i++) {
         auto ptr = std::make_unique<Thread>(std::bind(&ThreadPool::threadFunc, this));
@@ -37,7 +38,7 @@ void ThreadPool::subMitTask(std::shared_ptr<Task> task)
 {
     std::unique_lock<std::mutex> lock_(taskQueMtx_);
 
-    if (notFull_.wait_for(lock_, std::chrono::seconds(1), [&]() -> bool{ return taskQue_.size() < taskQueMaxThreadHold_; })) {
+    if (!notFull_.wait_for(lock_, std::chrono::seconds(1), [&]() -> bool{ return taskQue_.size() < taskQueMaxThreadHold_; })) {
         std::cerr << "task queue is full, submit task fail" << std::endl;
         return;
     }
@@ -55,7 +56,7 @@ void ThreadPool::threadFunc() {
             std::unique_lock<std::mutex> lock_(taskQueMtx_);
 
             std::cout << "tid:" << std::this_thread::get_id() << "尝试获取任务" << std::endl;
-            notFull_.wait(lock_, [&]() -> bool { return taskQue_.size() > 0 ;});
+            notEmpty_.wait(lock_, [&]() -> bool { return taskQue_.size() > 0;});
 
             task = taskQue_.front();
             taskQue_.pop();
