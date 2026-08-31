@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/fengyue/workspace/ThreadPool/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
