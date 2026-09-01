@@ -23,10 +23,10 @@ ThreadPool::ThreadPool()
 
 ThreadPool::~ThreadPool() {
     isCheckRunning = false;
-    notEmpty_.notify_all();
 
     // 等待线程池里面的所有线程返回  有两种状态：一种是有任务，一种是没任务
     std::unique_lock<std::mutex> lock(taskQueMtx_);
+    notEmpty_.notify_all();
     exitCond_.wait(lock, [&]() -> bool {return curThreadSize_ == 0;});
 }
 
@@ -104,16 +104,28 @@ bool ThreadPool::checkRunningState() const
 
 void ThreadPool::threadFunc(int threadId) {
     auto lastTime = std::chrono::high_resolution_clock::now();
-    while(isCheckRunning) {
+    // 这个地方是true的原因是因为很可能线程只是添加了任务，但是因为没有获取的阻塞导致ThreadPool可能退出作用域
+    // 所以我们的判断条件不可以是isCheckRunning，因为一旦退出作用域就会把isCheckRunning编程false，为了让下面的代码可以执行，我们需要设置为true
+    // 设计的目的是就算pool退出了，我们也要执行这个任务
+    while(true) {
         std::shared_ptr<Task> task;
         {
             std::unique_lock<std::mutex> lock_(taskQueMtx_);
 
             std::cout << "tid:" << std::this_thread::get_id() << "尝试获取任务" << std::endl;
 
-            // 如果是cached模式，那么在超过60s之后如果还是没有任务使用到多的线程，那么就删除这些线程
-            // 每一秒中轮询一次
-            while(taskQue_.size() == 0 && isCheckRunning) {
+            while(taskQue_.size() == 0) {
+                // 这个放在前面的原因是因为如果没有任务并且把进程池给析构了，那么我们就可以退出了
+                if (!isCheckRunning) {
+                    threads_.erase(threadId);
+                    std::cout << "ThreadId:" << std::this_thread::get_id() << "exit" << std::endl;
+                    curThreadSize_--;
+                    exitCond_.notify_all();
+                    return;
+                }
+
+                // 如果是cached模式，那么在超过60s之后如果还是没有任务使用到多的线程，那么就删除这些线程
+                // 每一秒中轮询一次
                 if (ThreadMode::MODE_CACHED == mode_) {
                     if (std::cv_status::timeout == notEmpty_.wait_for(lock_, std::chrono::seconds(1))) {
                         auto nowTime = std::chrono::high_resolution_clock::now();
@@ -132,15 +144,6 @@ void ThreadPool::threadFunc(int threadId) {
                 else {
                     notEmpty_.wait(lock_);
                 }
-            }
-
-            // 被唤醒看一下是不是线程池被关闭了
-            if (!isCheckRunning) {
-                threads_.erase(threadId);
-                std::cout << "ThreadId:" << std::this_thread::get_id() << "exit" << std::endl;
-                curThreadSize_--; 
-                exitCond_.notify_all();
-                return;
             }
 
             task = taskQue_.front();
@@ -163,10 +166,6 @@ void ThreadPool::threadFunc(int threadId) {
         lastTime = std::chrono::high_resolution_clock::now();
         idleThreadSize_++;
     }
-    threads_.erase(threadId);
-    curThreadSize_--;
-    exitCond_.notify_all();
-    std::cout << "ThreadId:" << std::this_thread::get_id() << "exit" << std::endl;
 }
 
 Thread::Thread(threadFunc func) : func_(func), threadId_(generateId_++)
