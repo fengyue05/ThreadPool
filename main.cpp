@@ -26,15 +26,21 @@ private:
 
 int main () {
     ThreadPool pool;
+    pool.setMode(ThreadMode::MODE_CACHED);
     pool.start(4);
 
-    pool.subMitTask(std::make_shared<MyTask>(1, 4));
-    pool.subMitTask(std::make_shared<MyTask>(1, 4));
-    pool.subMitTask(std::make_shared<MyTask>(1, 4));
-    pool.subMitTask(std::make_shared<MyTask>(1, 4));
-    pool.subMitTask(std::make_shared<MyTask>(1, 4));
-    pool.subMitTask(std::make_shared<MyTask>(1, 4));
-    pool.subMitTask(std::make_shared<MyTask>(1, 4));
+    Result res1 = pool.subMitTask(std::make_shared<MyTask>(1, 100));
+    Result res2 = pool.subMitTask(std::make_shared<MyTask>(1, 100));
+    Result res3 = pool.subMitTask(std::make_shared<MyTask>(1, 100));
+    Result res4 = pool.subMitTask(std::make_shared<MyTask>(1, 100));
+    Result res5 = pool.subMitTask(std::make_shared<MyTask>(1, 100));
+    Result res6 = pool.subMitTask(std::make_shared<MyTask>(1, 100));
+    Result res7 = pool.subMitTask(std::make_shared<MyTask>(1, 100));
+
+    int sum1 = res1.get().cast_<int>();
+    int sum2 = res2.get().cast_<int>();
+    int sum3 = res3.get().cast_<int>();
+    std::cout << (sum1 + sum2 + sum3) << std::endl;
     
     return 0;
 }

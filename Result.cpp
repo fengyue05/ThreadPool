@@ -1,6 +1,6 @@
 #include "Result.h"
 
-Result::Result(std::shared_ptr<Task> task, bool isValid) : isValid_(false), task_(task)
+Result::Result(std::shared_ptr<Task> task, bool isValid) : isValid_(isValid), task_(task)
 {
     task_->setResult(this);
 }

@@ -13,5 +13,5 @@ void Semaphore::post()
 void Semaphore::wait() {
     std::unique_lock<std::mutex> lock_(mutex_);
     cond_.wait(lock_, [&]() -> bool{ return resLimit_ > 0; });
-    cond_.notify_all();
+    resLimit_--;
 }
