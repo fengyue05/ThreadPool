@@ -9,6 +9,8 @@
 #include <vector>
 #include <chrono>
 #include <functional>
+#include "Task.h"
+#include "Result.h"
 
 enum class ThreadMode {
     MODE_FIXED,
@@ -16,11 +18,7 @@ enum class ThreadMode {
 };
 
 class Any;
-
-class Task {
-public:
-    virtual Any run() = 0;
-};
+class Result;
 
 class Thread {
 public:
@@ -42,7 +40,7 @@ public:
     void start(int size);
     void setMode(ThreadMode mode);
     void setTaskQueMaxSize(int threadHold);
-    void subMitTask(std::shared_ptr<Task> task);
+    Result subMitTask(std::shared_ptr<Task> task);
 
 private:
     ThreadPool(const ThreadPool&) = delete;
@@ -62,44 +60,5 @@ private:
 
     void threadFunc();
 };
-
-class Any {
-public:
-    Any() = default;
-    ~Any() = default;
-    Any(const Any&) = delete;
-    Any& operator=(const Any&) = delete;
-
-    template<typename T>
-    Any(T data) : base_(std::make_unique<Derive<T>>(data)) 
-    {}
-
-    template <typename T>
-    T cast_() {
-        Derive<T>* pd = dynamic_cast<Derive<T>*>(base_.get());
-        if (pd == nullptr) {
-            throw "type is incompatiable";
-        }
-        return pd->data_;
-    }
-
-private:
-    class Base {
-    public:
-        virtual ~Base() = default;
-    };
-
-    template<typename T>
-    class Derive : public Base {
-    public:
-        Derive(T data) : data_(data) 
-        {}
-    private:
-        T data_;
-    };
-
-    std::unique_ptr<Base> base_;
-};
-
 
 #endif

@@ -100,19 +100,83 @@ CMakeFiles/thread_pool_demo.dir/ThreadPool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/thread_pool_demo.dir/ThreadPool.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fengyue/workspace/ThreadPool/ThreadPool.cpp -o CMakeFiles/thread_pool_demo.dir/ThreadPool.cpp.s
 
+CMakeFiles/thread_pool_demo.dir/Result.cpp.o: CMakeFiles/thread_pool_demo.dir/flags.make
+CMakeFiles/thread_pool_demo.dir/Result.cpp.o: /home/fengyue/workspace/ThreadPool/Result.cpp
+CMakeFiles/thread_pool_demo.dir/Result.cpp.o: CMakeFiles/thread_pool_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fengyue/workspace/ThreadPool/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/thread_pool_demo.dir/Result.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/thread_pool_demo.dir/Result.cpp.o -MF CMakeFiles/thread_pool_demo.dir/Result.cpp.o.d -o CMakeFiles/thread_pool_demo.dir/Result.cpp.o -c /home/fengyue/workspace/ThreadPool/Result.cpp
+
+CMakeFiles/thread_pool_demo.dir/Result.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/thread_pool_demo.dir/Result.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fengyue/workspace/ThreadPool/Result.cpp > CMakeFiles/thread_pool_demo.dir/Result.cpp.i
+
+CMakeFiles/thread_pool_demo.dir/Result.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/thread_pool_demo.dir/Result.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fengyue/workspace/ThreadPool/Result.cpp -o CMakeFiles/thread_pool_demo.dir/Result.cpp.s
+
+CMakeFiles/thread_pool_demo.dir/Semphore.cpp.o: CMakeFiles/thread_pool_demo.dir/flags.make
+CMakeFiles/thread_pool_demo.dir/Semphore.cpp.o: /home/fengyue/workspace/ThreadPool/Semphore.cpp
+CMakeFiles/thread_pool_demo.dir/Semphore.cpp.o: CMakeFiles/thread_pool_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fengyue/workspace/ThreadPool/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/thread_pool_demo.dir/Semphore.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/thread_pool_demo.dir/Semphore.cpp.o -MF CMakeFiles/thread_pool_demo.dir/Semphore.cpp.o.d -o CMakeFiles/thread_pool_demo.dir/Semphore.cpp.o -c /home/fengyue/workspace/ThreadPool/Semphore.cpp
+
+CMakeFiles/thread_pool_demo.dir/Semphore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/thread_pool_demo.dir/Semphore.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fengyue/workspace/ThreadPool/Semphore.cpp > CMakeFiles/thread_pool_demo.dir/Semphore.cpp.i
+
+CMakeFiles/thread_pool_demo.dir/Semphore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/thread_pool_demo.dir/Semphore.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fengyue/workspace/ThreadPool/Semphore.cpp -o CMakeFiles/thread_pool_demo.dir/Semphore.cpp.s
+
+CMakeFiles/thread_pool_demo.dir/Task.cpp.o: CMakeFiles/thread_pool_demo.dir/flags.make
+CMakeFiles/thread_pool_demo.dir/Task.cpp.o: /home/fengyue/workspace/ThreadPool/Task.cpp
+CMakeFiles/thread_pool_demo.dir/Task.cpp.o: CMakeFiles/thread_pool_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fengyue/workspace/ThreadPool/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/thread_pool_demo.dir/Task.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/thread_pool_demo.dir/Task.cpp.o -MF CMakeFiles/thread_pool_demo.dir/Task.cpp.o.d -o CMakeFiles/thread_pool_demo.dir/Task.cpp.o -c /home/fengyue/workspace/ThreadPool/Task.cpp
+
+CMakeFiles/thread_pool_demo.dir/Task.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/thread_pool_demo.dir/Task.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fengyue/workspace/ThreadPool/Task.cpp > CMakeFiles/thread_pool_demo.dir/Task.cpp.i
+
+CMakeFiles/thread_pool_demo.dir/Task.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/thread_pool_demo.dir/Task.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fengyue/workspace/ThreadPool/Task.cpp -o CMakeFiles/thread_pool_demo.dir/Task.cpp.s
+
+CMakeFiles/thread_pool_demo.dir/Any.cpp.o: CMakeFiles/thread_pool_demo.dir/flags.make
+CMakeFiles/thread_pool_demo.dir/Any.cpp.o: /home/fengyue/workspace/ThreadPool/Any.cpp
+CMakeFiles/thread_pool_demo.dir/Any.cpp.o: CMakeFiles/thread_pool_demo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fengyue/workspace/ThreadPool/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/thread_pool_demo.dir/Any.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/thread_pool_demo.dir/Any.cpp.o -MF CMakeFiles/thread_pool_demo.dir/Any.cpp.o.d -o CMakeFiles/thread_pool_demo.dir/Any.cpp.o -c /home/fengyue/workspace/ThreadPool/Any.cpp
+
+CMakeFiles/thread_pool_demo.dir/Any.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/thread_pool_demo.dir/Any.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fengyue/workspace/ThreadPool/Any.cpp > CMakeFiles/thread_pool_demo.dir/Any.cpp.i
+
+CMakeFiles/thread_pool_demo.dir/Any.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/thread_pool_demo.dir/Any.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fengyue/workspace/ThreadPool/Any.cpp -o CMakeFiles/thread_pool_demo.dir/Any.cpp.s
+
 # Object files for target thread_pool_demo
 thread_pool_demo_OBJECTS = \
 "CMakeFiles/thread_pool_demo.dir/main.cpp.o" \
-"CMakeFiles/thread_pool_demo.dir/ThreadPool.cpp.o"
+"CMakeFiles/thread_pool_demo.dir/ThreadPool.cpp.o" \
+"CMakeFiles/thread_pool_demo.dir/Result.cpp.o" \
+"CMakeFiles/thread_pool_demo.dir/Semphore.cpp.o" \
+"CMakeFiles/thread_pool_demo.dir/Task.cpp.o" \
+"CMakeFiles/thread_pool_demo.dir/Any.cpp.o"
 
 # External object files for target thread_pool_demo
 thread_pool_demo_EXTERNAL_OBJECTS =
 
 thread_pool_demo: CMakeFiles/thread_pool_demo.dir/main.cpp.o
 thread_pool_demo: CMakeFiles/thread_pool_demo.dir/ThreadPool.cpp.o
+thread_pool_demo: CMakeFiles/thread_pool_demo.dir/Result.cpp.o
+thread_pool_demo: CMakeFiles/thread_pool_demo.dir/Semphore.cpp.o
+thread_pool_demo: CMakeFiles/thread_pool_demo.dir/Task.cpp.o
+thread_pool_demo: CMakeFiles/thread_pool_demo.dir/Any.cpp.o
 thread_pool_demo: CMakeFiles/thread_pool_demo.dir/build.make
 thread_pool_demo: CMakeFiles/thread_pool_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fengyue/workspace/ThreadPool/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable thread_pool_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fengyue/workspace/ThreadPool/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable thread_pool_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/thread_pool_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

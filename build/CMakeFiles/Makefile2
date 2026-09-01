@@ -85,12 +85,12 @@ clean: CMakeFiles/thread_pool_demo.dir/clean
 CMakeFiles/thread_pool_demo.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fengyue/workspace/ThreadPool/build/CMakeFiles --progress-num=1,2,3 "Built target thread_pool_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fengyue/workspace/ThreadPool/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target thread_pool_demo"
 .PHONY : CMakeFiles/thread_pool_demo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/thread_pool_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fengyue/workspace/ThreadPool/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fengyue/workspace/ThreadPool/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/thread_pool_demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fengyue/workspace/ThreadPool/build/CMakeFiles 0
 .PHONY : CMakeFiles/thread_pool_demo.dir/rule
@@ -102,7 +102,7 @@ thread_pool_demo: CMakeFiles/thread_pool_demo.dir/rule
 # codegen rule for target.
 CMakeFiles/thread_pool_demo.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fengyue/workspace/ThreadPool/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target thread_pool_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fengyue/workspace/ThreadPool/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Finished codegen for target thread_pool_demo"
 .PHONY : CMakeFiles/thread_pool_demo.dir/codegen
 
 # clean rule for target.

@@ -3,7 +3,7 @@
 #include <mutex>
 #include <thread>
 
-#define MAX_SIZE 6
+#define MAX_SIZE 1024
 
 ThreadPool::ThreadPool()
     : taskQueMaxThreadHold_(0)
@@ -26,7 +26,7 @@ void ThreadPool::start(int size) {
     for (int i = 0; i < initThreadSize_; i++) {
         threads_[i]->start();
     }
-}
+} 
 
 void ThreadPool::setMode(ThreadMode mode) { mode_ = mode; }
 
@@ -34,19 +34,21 @@ void ThreadPool::setTaskQueMaxSize(int threadHold) {
     taskQueMaxThreadHold_ = MAX_SIZE;
 }
 
-void ThreadPool::subMitTask(std::shared_ptr<Task> task)
+Result ThreadPool::subMitTask(std::shared_ptr<Task> task)
 {
     std::unique_lock<std::mutex> lock_(taskQueMtx_);
 
     if (!notFull_.wait_for(lock_, std::chrono::seconds(1), [&]() -> bool{ return taskQue_.size() < taskQueMaxThreadHold_; })) {
         std::cerr << "task queue is full, submit task fail" << std::endl;
-        return;
+        return Result(task, false);
     }
 
     taskQue_.emplace(task);
     taskSize_++;
     
     notEmpty_.notify_all();
+    
+    return Result(task, true);
 }
 
 void ThreadPool::threadFunc() {
@@ -70,7 +72,7 @@ void ThreadPool::threadFunc() {
 
             taskSize_--;
         }
-        task->run();
+        task->exec();
     }
 }
 

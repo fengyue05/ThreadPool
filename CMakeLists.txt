@@ -10,6 +10,10 @@ find_package(Threads REQUIRED)
 add_executable(thread_pool_demo
     main.cpp
     ThreadPool.cpp
+    Result.cpp
+    Semphore.cpp
+    Task.cpp
+    Any.cpp
 )
 
 target_link_libraries(thread_pool_demo PRIVATE Threads::Threads)

@@ -129,6 +129,102 @@ thread_pool_demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/build
 .PHONY : thread_pool_demo/fast
 
+Any.o: Any.cpp.o
+.PHONY : Any.o
+
+# target to build an object file
+Any.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Any.cpp.o
+.PHONY : Any.cpp.o
+
+Any.i: Any.cpp.i
+.PHONY : Any.i
+
+# target to preprocess a source file
+Any.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Any.cpp.i
+.PHONY : Any.cpp.i
+
+Any.s: Any.cpp.s
+.PHONY : Any.s
+
+# target to generate assembly for a file
+Any.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Any.cpp.s
+.PHONY : Any.cpp.s
+
+Result.o: Result.cpp.o
+.PHONY : Result.o
+
+# target to build an object file
+Result.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Result.cpp.o
+.PHONY : Result.cpp.o
+
+Result.i: Result.cpp.i
+.PHONY : Result.i
+
+# target to preprocess a source file
+Result.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Result.cpp.i
+.PHONY : Result.cpp.i
+
+Result.s: Result.cpp.s
+.PHONY : Result.s
+
+# target to generate assembly for a file
+Result.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Result.cpp.s
+.PHONY : Result.cpp.s
+
+Semphore.o: Semphore.cpp.o
+.PHONY : Semphore.o
+
+# target to build an object file
+Semphore.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Semphore.cpp.o
+.PHONY : Semphore.cpp.o
+
+Semphore.i: Semphore.cpp.i
+.PHONY : Semphore.i
+
+# target to preprocess a source file
+Semphore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Semphore.cpp.i
+.PHONY : Semphore.cpp.i
+
+Semphore.s: Semphore.cpp.s
+.PHONY : Semphore.s
+
+# target to generate assembly for a file
+Semphore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Semphore.cpp.s
+.PHONY : Semphore.cpp.s
+
+Task.o: Task.cpp.o
+.PHONY : Task.o
+
+# target to build an object file
+Task.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Task.cpp.o
+.PHONY : Task.cpp.o
+
+Task.i: Task.cpp.i
+.PHONY : Task.i
+
+# target to preprocess a source file
+Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Task.cpp.i
+.PHONY : Task.cpp.i
+
+Task.s: Task.cpp.s
+.PHONY : Task.s
+
+# target to generate assembly for a file
+Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_pool_demo.dir/build.make CMakeFiles/thread_pool_demo.dir/Task.cpp.s
+.PHONY : Task.cpp.s
+
 ThreadPool.o: ThreadPool.cpp.o
 .PHONY : ThreadPool.o
 
@@ -186,6 +282,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... thread_pool_demo"
+	@echo "... Any.o"
+	@echo "... Any.i"
+	@echo "... Any.s"
+	@echo "... Result.o"
+	@echo "... Result.i"
+	@echo "... Result.s"
+	@echo "... Semphore.o"
+	@echo "... Semphore.i"
+	@echo "... Semphore.s"
+	@echo "... Task.o"
+	@echo "... Task.i"
+	@echo "... Task.s"
 	@echo "... ThreadPool.o"
 	@echo "... ThreadPool.i"
 	@echo "... ThreadPool.s"
