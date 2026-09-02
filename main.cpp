@@ -23,8 +23,9 @@ private:
     int end_;
 };
 
-
 int main () {
+
+
     ThreadPool pool;
     pool.setMode(ThreadMode::MODE_CACHED);
     pool.start(4);
@@ -41,6 +42,6 @@ int main () {
     int sum2 = res2.get().cast_<int>();
     int sum3 = res3.get().cast_<int>();
     std::cout << (sum1 + sum2 + sum3) << std::endl;
-    
+
     return 0;
 }
